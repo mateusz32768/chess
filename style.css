@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+
+.header1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+#wrapper {
+    background-color: orange;
+    width: 80%;
+    margin: 0 auto;
+    aspect-ratio: 1/1;
+}
+
+.fieldRow {
+    display: flex;
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.blackFirst:nth-child(even) {
+    background-color: black;
+}
+
+.blackFirst:nth-child(odd) {
+    background-color: white;
+}
+
+.whiteFirst:nth-child(even) {
+    background-color: white;
+}
+
+.whiteFirst:nth-child(odd) {
+    background-color: black;
+}
+
+.descRow {
+    display: flex;
+}
+
+.field {
+    width: 10%;
+    aspect-ratio: 1/1;
+    /* border-width: 1px;
+    border-style: solid;
+    border-color: blue; */
+    display: inline-block;
+    /* background-color: red; */
+}
+
+.rowDescription {
+    display: flex;
+    width: 5%;
+    font-weight: bold;
+    border-width: 2px;
+    justify-content: center;
+    align-items: center;
+}
+
+.colDescription {
+    display: flex;
+    width: 10%;
+    font-weight: bold;
+    border-width: 2px;
+    justify-content: center;
+    align-items: center;
+}
