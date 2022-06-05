@@ -9,7 +9,7 @@
 
 #wrapper {
     background-color: orange;
-    width: 80%;
+    width: 50%;
     margin: 0 auto;
     aspect-ratio: 1/1;
 }
@@ -43,9 +43,9 @@
 .field {
     width: 10%;
     aspect-ratio: 1/1;
-    /* border-width: 1px;
+    /*border-width: 0px;
     border-style: solid;
-    border-color: blue; */
+    border-color: blue;*/
     display: inline-block;
     /* background-color: red; */
 }

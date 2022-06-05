@@ -8,7 +8,7 @@
         <title>Simple chess</title>
     </head>
     <body>
-        <div>
+        <div id="headerId">
             <h1 class="header1">Simple chess game</h1>
         </div>
         <div id="wrapper">
@@ -26,14 +26,16 @@
             </div>
             <div class="fieldRow">
                 <div class="rowDescription">8</div>
+                <div class="field whiteFirst">
+                    <!-- <img src="./pieces.png" alt="pieces" /> -->
+                </div>
                 <div class="field whiteFirst"></div>
                 <div class="field whiteFirst"></div>
                 <div class="field whiteFirst"></div>
                 <div class="field whiteFirst"></div>
                 <div class="field whiteFirst"></div>
                 <div class="field whiteFirst"></div>
-                <div class="field whiteFirst"></div>
-                <div class="field whiteFirst"></div>
+                <div id="fieldH8" class="field whiteFirst"></div>
                 <div class="rowDescription">8</div>
             </div>
             <div class="fieldRow">
@@ -133,5 +135,6 @@
                 <div class="rowDescription"></div>
             </div>
         </div>
+        <script type="text/javascript" src="script.js"></script>
     </body>
 </html>
