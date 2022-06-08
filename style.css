@@ -48,6 +48,8 @@
     border-color: blue;*/
     display: inline-block;
     /* background-color: red; */
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .rowDescription {
