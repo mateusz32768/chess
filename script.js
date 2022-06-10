@@ -5,6 +5,21 @@ const setFiledState = (arr, field, color, type) => {
     fieldState.piece = { color: color, type: type };
 };
 
+const setFiledSelect = (arr, field, selected) => {
+    let fieldState = arr.find((fState) => fState.field === field);
+    fieldState.selected = selected;
+};
+
+const isFieldSelected = (arr, field) => {
+    let fieldState = arr.find((fState) => fState.field === field);
+    return fieldState.selected;
+};
+
+const getSelectedField = (arr) => {
+    let fieldState = arr.find((fState) => fState.selected);
+    return fieldState;
+};
+
 const initBoardRow = (column, arr) => {
     for (let row = 1; row <= 8; row++) {
         arr.push({
@@ -88,14 +103,33 @@ const refreshBoardState = (boardStateArr, fieldsDom) => {
 };
 
 const onFieldClick = (event) => {
-    console.log("zz" + event.target);
+    /*console.log("zz" + event.target);
     event.target.style.borderWidth = 20;
     event.target.style.borderStyle = "solid";
     event.target.style.borderColor = "red";
     // fh8.style.borderWidth = 20;
     // fh8.style.borderStyle = "solid";
     // fh8.style.borderColor = "red";
-    event.target.style.backgroundImage = "url('Pieces/WhiteRook.png')";
+    event.target.style.backgroundImage = "url('Pieces/WhiteRook.png')";*/
+    // debugger;
+    let fieldId = event.target.id.replace("field", "");
+    //debugger;
+    let clickedField = boardState.find((field) => field.field == fieldId);
+    let selectedField = getSelectedField(boardState);
+    /*console.log("clicked" + clickedField);
+    console.log("selected" + selectedField);*/
+    if (selectedField === undefined) {
+        // field select
+        if (clickedField.piece.type === null) return;
+        setFiledSelect(boardState, fieldId, true);
+    } else {
+        // move piece
+        selectedField.selected = false;
+        clickedField.piece = { ...selectedField.piece };
+        selectedField.piece = { color: null, type: null };
+    }
+
+    refreshBoardState(boardState, fields);
 };
 
 fields.forEach((v, e) => {
@@ -106,9 +140,3 @@ fields.forEach((v, e) => {
 
 let boardState = initBoardState();
 refreshBoardState(boardState, fields);
-
-//console.log(v)
-//v.OnClick = onFieldClick
-// console.log(
-//document.getElementById("fieldH8").style.borderWidth = 20;
-//);
